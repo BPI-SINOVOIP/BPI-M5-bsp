@@ -1,0 +1,8 @@
+[submodule "u-boot-aml"]
+	path = u-boot-aml
+	url = https://github.com/Dangku/Amlogic-u-boot
+	branch = odroidg12-v2015.01-c4-m5
+[submodule "linux-aml"]
+	path = linux-aml
+	url = https://github.com/Dangku/Amlogic-linux
+	branch = odroidg12-4.9.y-c4-m5
