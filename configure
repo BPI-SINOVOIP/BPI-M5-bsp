@@ -97,8 +97,8 @@ case $BOARD in
 		uboot_config=odroidc4_defconfig
 		kernel_dtb=meson64_odroidc4.dtb
 		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.236"
-		kernel_headers="linux-headers-4.9.236"
+		kernel_modules="4.9.236-BPI-C4-Kernel"
+		kernel_headers="linux-headers-4.9.236-BPI-C4-Kernel"
 		;;
 	*)
 		;;
