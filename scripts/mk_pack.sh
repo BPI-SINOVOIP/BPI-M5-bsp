@@ -45,10 +45,12 @@ pack_boot()
 	dest_path=${BOOT}/bananapi/${BOARD}/${PLATFORM}
 
 	mkdir -p $dest_path
+	mkdir -p $dest_path/overlays
 	cp -a ${PACK}/${MACH}/common/linux/* ${dest_path}/
 	cp -a ${PACK}/${MACH}/${BOARD}/linux/* ${dest_path}/
 	cp -a ${KERN_DIR}/arch/${ARCH}/boot/Image.gz ${dest_path}/
 	cp -a ${KERN_DIR}/arch/${ARCH}/boot/dts/amlogic/${KERNEL_DTB} ${dest_path}/
+	cp -a ${KERN_DIR}/arch/${ARCH}/boot/dts/amlogic/overlays/${BOARD}/*.dtbo ${dest_path}/overlays/
 }
 
 pack_root()
