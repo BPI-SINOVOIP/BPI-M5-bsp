@@ -76,6 +76,7 @@ usage() {
 
 if [ $# -eq 0 ]; then
 	usage
+	exit 1
 fi
 
 BOARD=$1
@@ -90,22 +91,22 @@ case $BOARD in
 		kernel_modules="4.9.236-BPI-M5-Kernel"
 		kernel_headers="linux-headers-4.9.236-BPI-M5-Kernel"
 		;;
-	bpi-c4)
+	odroidc4)
 		MACH=sm1
 		ARCH=arm64
-		BOARD=bpi-c4
+		BOARD=odroidc4
 		uboot_config=odroidc4_defconfig
 		kernel_dtb=meson64_odroidc4.dtb
 		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.236-BPI-C4-Kernel"
-		kernel_headers="linux-headers-4.9.236-BPI-C4-Kernel"
+		kernel_modules="4.9.236"
+		kernel_headers="linux-headers-4.9.236"
 		;;
 	*)
 		;;
 esac
 
 if [ ! -d ${TOPDIR}/aml-pack/${MACH}/${BOARD} ]; then
-	echo -e "\033[31m${BOARD} not support, exit   \033[0m"
+	echo -e "\033[31m${BOARD} not support\033[0m"
 	usage
 fi
 
