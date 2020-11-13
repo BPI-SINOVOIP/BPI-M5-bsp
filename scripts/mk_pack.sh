@@ -42,7 +42,7 @@ pack_boot()
 {
 	echo "pack boot"
 
-	dest_path=${BOOT}/bananapi/${BOARD}/${PLATFORM}
+	dest_path=${BOOT}
 
 	mkdir -p $dest_path
 	mkdir -p $dest_path/overlays
