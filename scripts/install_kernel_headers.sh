@@ -70,10 +70,15 @@ find "$TARGET/scripts" -type f | while read i; do if file -b $i | egrep -q "^ELF
 find arch/*/include   \
                -print | cpio -pdL --preserve-modification-time "$TARGET";
 
+# aml specific files
+cp drivers/amlogic/debug/irqflags_debug_$ARCH.h "$TARGET/drivers/amlogic/debug"
+cp drivers/amlogic/media/common/ion_dev/meson_ion.h "$TARGET/drivers/amlogic/media/common/ion_dev"
+
 mkdir -p "$TARGET/arch/um"
 cp -a arch/um/Makefile* "$TARGET/arch/um/"
 mkdir -p "$TARGET/arch/$ARCH/kernel"
 cp -a arch/$ARCH/kernel/asm-offsets.s "$TARGET/arch/$ARCH/kernel"
+cp -a arch/$ARCH/kernel/module.lds "$TARGET/arch/$ARCH/kernel"
 rm -f "$TARGET/include/linux/version.h"
 cp -a .config "$TARGET/"
 
