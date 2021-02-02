@@ -86,7 +86,7 @@ case $BOARD in
 		ARCH=arm64
 		BOARD=bpi-m5
 		uboot_config=bananapi_m5_defconfig
-		kernel_dtb=meson64_bananapi_m5.dtb
+		kernel_dtb=meson64_bananapi_*.dtb
 		kernel_config=bananapi_m5_defconfig
 		kernel_modules="4.9.236-BPI-M5-Kernel"
 		kernel_headers="linux-headers-4.9.236-BPI-M5-Kernel"
