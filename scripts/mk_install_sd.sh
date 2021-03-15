@@ -8,9 +8,10 @@ TARGET=
 echo "--------------------------------------------------------------------------------"
 echo "  1. M5/M2Pro"
 echo "  2. C4"
+echo "  3. N2/N2+"
 echo "--------------------------------------------------------------------------------"
 
-read -p "Please choose a target to install(1-2): " board
+read -p "Please choose a target to install(1-3): " board
 echo
 
 if [ -z "${board}" ]; then
@@ -25,6 +26,8 @@ case ${board} in
 	2) BOARD="c4"
 	   TARGET=odroidc4
 	   ;;
+	3) BOARD="n2"
+	   TARGET=odroidn2
 esac
 
 if [ ! -d SD/${TARGET} ]; then
