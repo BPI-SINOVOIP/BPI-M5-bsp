@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build script for BPI-M2U-BSP
+# Build script for BPI-M5-BSP
 
 BOARD=bpi-m5
 mode=$1

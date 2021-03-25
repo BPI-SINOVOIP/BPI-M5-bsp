@@ -6,11 +6,12 @@ BOARD=
 TARGET=
 
 echo "--------------------------------------------------------------------------------"
-echo "  1. M5"
+echo "  1. M5/M2Pro"
 echo "  2. C4"
+echo "  3. N2/N2+"
 echo "--------------------------------------------------------------------------------"
 
-read -p "Please choose a target to install(1-2): " board
+read -p "Please choose a target to install(1-3): " board
 echo
 
 if [ -z "${board}" ]; then
@@ -19,13 +20,17 @@ if [ -z "${board}" ]; then
 fi
 
 case ${board} in
-	1) BOARD="m5";;
-	2) BOARD="c4";;
+	1) BOARD="m5"
+	   TARGET=bpi-${BOARD}
+	   ;;
+	2) BOARD="c4"
+	   TARGET=odroidc4
+	   ;;
+	3) BOARD="n2"
+	   TARGET=odroidn2
 esac
 
-TARGET=SD/bpi-${BOARD}
-
-if [ ! -d ${TARGET} ]; then
+if [ ! -d SD/${TARGET} ]; then
 	echo -e "\033[31mtarget install files does not exist, please check the build. \033[0m"
 	exit 1
 fi
@@ -52,7 +57,7 @@ esac
 
 echo
 
-BOOTLOADER=${TARGET}/100MB/bpi-${BOARD}-512b.img.gz
+BOOTLOADER=SD/${TARGET}/100MB/${TARGET}-512b.img.gz
 
 ## download bootloader
 if [ ! -f ${BOOTLOADER} ]; then
@@ -68,7 +73,7 @@ echo "bootloader download finished"
 echo
 
 ## boot and root
-cd ${TARGET}
+cd SD/${TARGET}
 if command -v bpi-update > /dev/null 2>&1; then
 	sudo bpi-update -d ${DEVICE}
 else
