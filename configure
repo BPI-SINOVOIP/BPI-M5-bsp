@@ -91,6 +91,16 @@ case $BOARD in
 		kernel_modules="4.9.241-BPI-M5"
 		kernel_headers="linux-headers-4.9.241-BPI-M5"
 		;;
+	bpi-firewalla)
+		MACH=g12b
+		ARCH=arm64
+		BOARD=bpi-firewalla
+		uboot_config=bananapi_firewalla_defconfig
+		kernel_dtb=meson64_bananapi_*.dtb
+		kernel_config=bananapi_firewalla_defconfig
+		kernel_modules="4.9.241-BPI-FIREWALLA"
+		kernel_headers="linux-headers-4.9.241-BPI-FIREWALLA"
+		;;
 	odroidc4)
 		MACH=sm1
 		ARCH=arm64
@@ -102,7 +112,7 @@ case $BOARD in
 		kernel_headers="linux-headers-4.9.241"
 		;;
 	odroidn2)
-		MACH=sm1
+		MACH=g12b
 		ARCH=arm64
 		BOARD=odroidn2
 		uboot_config=odroidn2_defconfig

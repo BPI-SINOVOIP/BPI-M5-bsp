@@ -9,6 +9,7 @@ echo "--------------------------------------------------------------------------
 echo "  1. M5/M2Pro"
 echo "  2. C4"
 echo "  3. N2/N2+"
+echo "  4. Firewalla"
 echo "--------------------------------------------------------------------------------"
 
 read -p "Please choose a target to install(1-3): " board
@@ -28,6 +29,10 @@ case ${board} in
 	   ;;
 	3) BOARD="n2"
 	   TARGET=odroidn2
+	   ;;
+	4) BOARD="firewalla"
+	   TARGET=bpi-${BOARD}
+	   ;;
 esac
 
 if [ ! -d SD/${TARGET} ]; then
