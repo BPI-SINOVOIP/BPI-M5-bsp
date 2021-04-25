@@ -4,6 +4,8 @@ Banana Pi M5 board bsp (u-boot 2015.1 & Kernel 4.9.236)
 ----------
 **Prepare**
 
+[Install Docker Engine](https://docs.docker.com/engine/install/) on your platform.
+
 Get the docker image from [Sinovoip Docker Hub](https://hub.docker.com/r/sinovoip/bpi-build-linux-4.4/) , Build the source code with this docker environment.
 
 Download source code
