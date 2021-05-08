@@ -96,7 +96,7 @@ case $BOARD in
 		ARCH=arm64
 		BOARD=bpi-firewalla
 		uboot_config=bananapi_firewalla_defconfig
-		kernel_dtb=meson64_bananapi_firewalla.dtb
+		kernel_dtb=meson64_bananapi_firewalla*.dtb
 		kernel_config=bananapi_firewalla_defconfig
 		kernel_modules="4.9.241-BPI-FIREWALLA"
 		kernel_headers="linux-headers-4.9.241-BPI-FIREWALLA"
