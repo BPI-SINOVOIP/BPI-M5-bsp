@@ -16,6 +16,7 @@ kernel_headers=
 FIP_TOOLCHAIN=gcc-linaro-arm-none-eabi-4.8-2014.04_linux
 U_TOOLCHAIN=gcc-linaro-aarch64-none-elf-4.8-2013.11_linux
 K_TOOLCHAIN=gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu
+#K_TOOLCHAIN=gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu
 FIP_CROSS_COMPILE=$TOPDIR/toolchains/$FIP_TOOLCHAIN/bin
 U_CROSS_COMPILE=$TOPDIR/toolchains/$U_TOOLCHAIN/bin
 K_CROSS_COMPILE=$TOPDIR/toolchains/$K_TOOLCHAIN/bin
@@ -90,36 +91,6 @@ case $BOARD in
 		kernel_config=bananapi_m5_defconfig
 		kernel_modules="4.9.241-BPI-M5"
 		kernel_headers="linux-headers-4.9.241-BPI-M5"
-		;;
-	bpi-firewalla)
-		MACH=g12b
-		ARCH=arm64
-		BOARD=bpi-firewalla
-		uboot_config=bananapi_firewalla_defconfig
-		kernel_dtb=meson64_bananapi_firewalla*.dtb
-		kernel_config=bananapi_firewalla_defconfig
-		kernel_modules="4.9.241-BPI-FIREWALLA"
-		kernel_headers="linux-headers-4.9.241-BPI-FIREWALLA"
-		;;
-	odroidc4)
-		MACH=sm1
-		ARCH=arm64
-		BOARD=odroidc4
-		uboot_config=odroidc4_defconfig
-		kernel_dtb=meson64_odroidc4.dtb
-		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.241"
-		kernel_headers="linux-headers-4.9.241"
-		;;
-	odroidn2)
-		MACH=g12b
-		ARCH=arm64
-		BOARD=odroidn2
-		uboot_config=odroidn2_defconfig
-		kernel_dtb=meson64_odroidn2_plus.dtb
-		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.241"
-		kernel_headers="linux-headers-4.9.241"
 		;;
 	*)
 		;;
