@@ -7,12 +7,10 @@ TARGET=
 
 echo "--------------------------------------------------------------------------------"
 echo "  1. M5/M2Pro"
-echo "  2. C4"
-echo "  3. N2/N2+"
-echo "  4. Firewalla"
+echo "  2. Firewalla"
 echo "--------------------------------------------------------------------------------"
 
-read -p "Please choose a target to install(1-3): " board
+read -p "Please choose a target to install(1-2): " board
 echo
 
 if [ -z "${board}" ]; then
@@ -23,12 +21,6 @@ fi
 case ${board} in
 	1) BOARD="m5"
 	   TARGET=bpi-${BOARD}
-	   ;;
-	2) BOARD="c4"
-	   TARGET=odroidc4
-	   ;;
-	3) BOARD="n2"
-	   TARGET=odroidn2
 	   ;;
 	4) BOARD="firewalla"
 	   TARGET=bpi-${BOARD}

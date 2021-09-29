@@ -101,26 +101,6 @@ case $BOARD in
 		kernel_modules="4.9.241-BPI-FIREWALLA"
 		kernel_headers="linux-headers-4.9.241-BPI-FIREWALLA"
 		;;
-	odroidc4)
-		MACH=sm1
-		ARCH=arm64
-		BOARD=odroidc4
-		uboot_config=odroidc4_defconfig
-		kernel_dtb=meson64_odroidc4.dtb
-		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.241"
-		kernel_headers="linux-headers-4.9.241"
-		;;
-	odroidn2)
-		MACH=g12b
-		ARCH=arm64
-		BOARD=odroidn2
-		uboot_config=odroidn2_defconfig
-		kernel_dtb=meson64_odroidn2_plus.dtb
-		kernel_config=odroidg12_defconfig
-		kernel_modules="4.9.241"
-		kernel_headers="linux-headers-4.9.241"
-		;;
 	*)
 		;;
 esac
