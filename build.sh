@@ -1,8 +1,20 @@
 #!/bin/bash
 # Build script for BPI-M5-BSP
 
-BOARD=bpi-m5
-mode=$1
+BOARD=$1
+mode=$2
+
+usage() {
+	cat <<-EOT >&2
+	Usage: $0 <board>
+	EOT
+	./configure
+}
+
+if [ $# -eq 0 ]; then
+	usage
+	exit 1
+fi
 
 source configure $BOARD
 

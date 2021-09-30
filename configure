@@ -67,7 +67,6 @@ generate_board_envsh() {
 
 usage() {
 	cat <<-EOT >&2
-	Usage: $0 <board>
 
 	supported boards:
 	EOT
@@ -91,15 +90,15 @@ case $BOARD in
 		kernel_modules="4.9.241-BPI-M5"
 		kernel_headers="linux-headers-4.9.241-BPI-M5"
 		;;
-	bpi-firewalla)
+	bpi-m2s)
 		MACH=g12b
 		ARCH=arm64
-		BOARD=bpi-firewalla
-		uboot_config=bananapi_firewalla_defconfig
-		kernel_dtb=meson64_bananapi_firewalla*.dtb
-		kernel_config=bananapi_firewalla_defconfig
-		kernel_modules="4.9.241-BPI-FIREWALLA"
-		kernel_headers="linux-headers-4.9.241-BPI-FIREWALLA"
+		BOARD=bpi-m2s
+		uboot_config=bananapi_m2s_defconfig
+		kernel_dtb=meson64_bananapi_m2s.dtb
+		kernel_config=bananapi_m2s_defconfig
+		kernel_modules="4.9.241-BPI-M2S"
+		kernel_headers="linux-headers-4.9.241-BPI-M2S"
 		;;
 	*)
 		;;

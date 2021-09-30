@@ -7,7 +7,7 @@ TARGET=
 
 echo "--------------------------------------------------------------------------------"
 echo "  1. M5/M2Pro"
-echo "  2. Firewalla"
+echo "  2. M2S"
 echo "--------------------------------------------------------------------------------"
 
 read -p "Please choose a target to install(1-2): " board
@@ -22,7 +22,7 @@ case ${board} in
 	1) BOARD="m5"
 	   TARGET=bpi-${BOARD}
 	   ;;
-	4) BOARD="firewalla"
+	2) BOARD="m2s"
 	   TARGET=bpi-${BOARD}
 	   ;;
 esac
