@@ -87,8 +87,8 @@ case $BOARD in
 		uboot_config=bananapi_m5_defconfig
 		kernel_dtb=meson64_bananapi_*.dtb
 		kernel_config=bananapi_m5_defconfig
-		kernel_modules="4.9.241-BPI-M5"
-		kernel_headers="linux-headers-4.9.241-BPI-M5"
+		kernel_modules="4.9.312-BPI-M5"
+		kernel_headers="linux-headers-4.9.312-BPI-M5"
 		;;
 	bpi-m2s)
 		MACH=g12b
@@ -97,8 +97,8 @@ case $BOARD in
 		uboot_config=bananapi_m2s_defconfig
 		kernel_dtb=meson64_bananapi_m2s.dtb
 		kernel_config=bananapi_m2s_defconfig
-		kernel_modules="4.9.241-BPI-M2S"
-		kernel_headers="linux-headers-4.9.241-BPI-M2S"
+		kernel_modules="4.9.312-BPI-M2S"
+		kernel_headers="linux-headers-4.9.312-BPI-M2S"
 		;;
 	*)
 		;;
