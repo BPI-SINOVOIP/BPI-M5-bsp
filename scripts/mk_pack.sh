@@ -107,7 +107,7 @@ pack_deb()
 	Installed-Size: 1
 	Priority: optional
 	Depends: bash
-	Description: Bananapi M5/M2Pro bsp
+	Description: Bananapi bsp
 	EOF
 
 	# pre install script
