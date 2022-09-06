@@ -16,7 +16,6 @@ kernel_headers=
 FIP_TOOLCHAIN=gcc-linaro-arm-none-eabi-4.8-2014.04_linux
 U_TOOLCHAIN=gcc-linaro-aarch64-none-elf-4.8-2013.11_linux
 K_TOOLCHAIN=gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu
-#K_TOOLCHAIN=gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu
 FIP_CROSS_COMPILE=$TOPDIR/toolchains/$FIP_TOOLCHAIN/bin
 U_CROSS_COMPILE=$TOPDIR/toolchains/$U_TOOLCHAIN/bin
 K_CROSS_COMPILE=$TOPDIR/toolchains/$K_TOOLCHAIN/bin
@@ -68,7 +67,6 @@ generate_board_envsh() {
 
 usage() {
 	cat <<-EOT >&2
-	Usage: $0 <board>
 
 	supported boards:
 	EOT
@@ -89,8 +87,18 @@ case $BOARD in
 		uboot_config=bananapi_m5_defconfig
 		kernel_dtb=meson64_bananapi_*.dtb
 		kernel_config=bananapi_m5_defconfig
-		kernel_modules="4.9.241-BPI-M5"
-		kernel_headers="linux-headers-4.9.241-BPI-M5"
+		kernel_modules="4.9.312-BPI-M5"
+		kernel_headers="linux-headers-4.9.312-BPI-M5"
+		;;
+	bpi-m2s)
+		MACH=g12b
+		ARCH=arm64
+		BOARD=bpi-m2s
+		uboot_config=bananapi_m2s_defconfig
+		kernel_dtb=meson64_bananapi_m2s.dtb
+		kernel_config=bananapi_m2s_defconfig
+		kernel_modules="4.9.312-BPI-M2S"
+		kernel_headers="linux-headers-4.9.312-BPI-M2S"
 		;;
 	*)
 		;;
