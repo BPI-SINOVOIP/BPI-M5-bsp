@@ -101,11 +101,13 @@ case $BOARD in
 		kernel_headers="linux-headers-4.9.312-BPI-M2S"
 		;;
 	*)
+		echo -e "\033[31mboardd ${BOARD} is not support\033[0m"
+		exit 1
 		;;
 esac
 
 if [ ! -d ${TOPDIR}/aml-pack/${MACH}/${BOARD} ]; then
-	echo -e "\033[31m${BOARD} not support\033[0m"
+	echo -e "\033[31mboard ${BOARD} is not support\033[0m"
 	usage
 fi
 
