@@ -90,22 +90,14 @@ case $BOARD in
 		kernel_modules="4.9.312-BPI-M5"
 		kernel_headers="linux-headers-4.9.312-BPI-M5"
 		;;
-	bpi-m2s)
-		MACH=g12b
-		ARCH=arm64
-		BOARD=bpi-m2s
-		uboot_config=bananapi_m2s_defconfig
-		kernel_dtb=meson64_bananapi_m2s.dtb
-		kernel_config=bananapi_m2s_defconfig
-		kernel_modules="4.9.312-BPI-M2S"
-		kernel_headers="linux-headers-4.9.312-BPI-M2S"
-		;;
 	*)
+		echo -e "\033[31mboard ${BOARD} is not support\033[0m"
+		exit 1
 		;;
 esac
 
 if [ ! -d ${TOPDIR}/aml-pack/${MACH}/${BOARD} ]; then
-	echo -e "\033[31m${BOARD} not support\033[0m"
+	echo -e "\033[31mboard ${BOARD} is not support\033[0m"
 	usage
 fi
 
